@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B38A16C3-74C0-4A57-BCD9-6000681C06B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GamePieces</RootNamespace>
+    <AssemblyName>GamePieces</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\CardType.cs" />
+    <Compile Include="Cards\DataPacketHelper.cs" />
+    <Compile Include="Cards\Deck\Discard\Apartment_Building.cs" />
+    <Compile Include="Cards\Deck\Discard\Commuter_Train.cs" />
+    <Compile Include="Cards\Deck\Discard\Corner_Store.cs" />
+    <Compile Include="Cards\Deck\Discard\Death_From_Above.cs" />
+    <Compile Include="Cards\Deck\Discard\Energize.cs" />
+    <Compile Include="Cards\Deck\Discard\Evacuation_Orders.cs" />
+    <Compile Include="Cards\Deck\Discard\Fire_Blast.cs" />
+    <Compile Include="Cards\Deck\Discard\Gas_Refinery.cs" />
+    <Compile Include="Cards\Deck\Discard\Heal.cs" />
+    <Compile Include="Cards\Deck\Discard\High_Altitude_Bombing.cs" />
+    <Compile Include="Cards\Deck\Discard\Jet_Fighters.cs" />
+    <Compile Include="Cards\Deck\Discard\National_Guard.cs" />
+    <Compile Include="Cards\Deck\Discard\Nuclear_Power_Plant.cs" />
+    <Compile Include="Cards\Deck\Discard\Skyscraper.cs" />
+    <Compile Include="Cards\Deck\Discard\Tanks.cs" />
+    <Compile Include="Cards\Deck\Discard\Vast_Storm.cs" />
+    <Compile Include="Cards\Deck\Keep\Acid_Attack.cs" />
+    <Compile Include="Cards\Deck\Keep\Alpha_Monster.cs" />
+    <Compile Include="Cards\Deck\Keep\Armor_Plating.cs" />
+    <Compile Include="Cards\Deck\Keep\Dedicated_News_Team.cs" />
+    <Compile Include="Cards\Deck\Keep\Energy_Hoarder.cs" />
+    <Compile Include="Cards\Deck\Keep\Even_Bigger.cs" />
+    <Compile Include="Cards\Deck\Keep\Extra_Head.cs" />
+    <Compile Include="Cards\Deck\Keep\Fire_Breathing.cs" />
+    <Compile Include="Cards\Deck\Keep\Friend_Of_Children.cs" />
+    <Compile Include="Cards\Deck\Keep\Giant_Brain.cs" />
+    <Compile Include="Cards\Deck\Keep\Herbivore.cs" />
+    <Compile Include="Cards\Deck\Keep\It_Has_A_Child.cs" />
+    <Compile Include="Cards\Deck\Keep\Jets.cs" />
+    <Compile Include="Cards\Deck\Keep\Regeneration.cs" />
+    <Compile Include="Cards\Deck\Keep\Rooting_For_The_Underdog.cs" />
+    <Compile Include="Cards\Deck\Keep\Solar_Powered.cs" />
+    <Compile Include="Cards\Deck\Keep\Spiked_Tail.cs" />
+    <Compile Include="Cards\Deck\Keep\Urbavore.cs" />
+    <Compile Include="Cards\Deck\Keep\We_Are_Only_Making_It_Stronger.cs" />
+    <Compile Include="Cards\CardDataPacket.cs" />
+    <Compile Include="Dice\Color.cs" />
+    <Compile Include="Dice\Die.cs" />
+    <Compile Include="Dice\DiceDataPacket.cs" />
+    <Compile Include="Dice\Symbol.cs" />
+    <Compile Include="Monsters\Location.cs" />
+    <Compile Include="Monsters\Monster.cs" />
+    <Compile Include="Monsters\MonsterDataPacket.cs" />
+    <Compile Include="Monsters\State.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session\Board.cs" />
+    <Compile Include="Session\CardsForSale.cs" />
+    <Compile Include="Session\DiceRoller.cs" />
+    <Compile Include="Session\Game.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data Structures\Data Structures.csproj">
+      <Project>{B20265A0-2010-4E1C-AB32-8E441DEF08F7}</Project>
+      <Name>Data Structures</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
